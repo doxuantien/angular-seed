@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  calypso-client:
+    hostname: localhost
+    image: web-app:latest
+    container_name: web-app
+    build: .
+    restart: always
+    ports:
+      - 2049:80

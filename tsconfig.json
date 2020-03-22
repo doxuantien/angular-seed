@@ -1,0 +1,31 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"],
+    "paths": {
+      "@environments/*": ["projects/app/src/environments/*"],
+      "@core/*": ["projects/app/src/app/core/*"],
+      "@modules/*": ["projects/app/src/app/modules/*"],
+      "@shared/*": ["projects/app/src/app/shared/*"],
+      "@pages/*": ["projects/app/src/app/pages/*"],
+      "@security": ["projects/app/src/app/security/index"],
+      "@calypso-commons": ["projects/app-commons/index"],
+      "@calypso-ui": ["projects/app-ui/src/public-api"]
+    }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
+}
