@@ -20,8 +20,8 @@
       "@shared/*": ["projects/app/src/app/shared/*"],
       "@pages/*": ["projects/app/src/app/pages/*"],
       "@security": ["projects/app/src/app/security/index"],
-      "@calypso-commons": ["projects/app-commons/index"],
-      "@calypso-ui": ["projects/app-ui/src/public-api"]
+      "@app-commons": ["projects/app-commons/index"],
+      "@app-ui": ["projects/app-ui/src/public-api"]
     }
   },
   "angularCompilerOptions": {

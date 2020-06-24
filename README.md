@@ -4,7 +4,7 @@
 
 + [node](http://nodejs.org) 12.13.0
 + [npm](http://npmjs.com) 6.13.0
-+ [ng](http://angular.io) 8.2.13
++ [ng](http://angular.io) 9.1.9
 
 ### 1. Packages
 
