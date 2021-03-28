@@ -2,9 +2,23 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "../../out-tsc/app",
-    "types": []
+    "types": [],
+    "paths": {
+      "@environments/*": ["projects/app/src/environments/*"],
+      "@security": ["projects/app/src/app/security/index"],
+      "@core/*": ["projects/app/src/app/core/*"],
+      "@models/*": ["projects/app/src/app/models/*"],
+      "@constants/*": ["projects/app/src/app/constants/*"],
+      "@modules/*": ["projects/app/src/app/modules/*"],
+      "@shared/*": ["projects/app/src/app/shared/*"],
+      "@services/*": ["projects/app/src/app/services/*"],
+      "@stores/*": ["projects/app/src/app/stores/*"],
+      "@pages/*": ["projects/app/src/app/pages/*"],
+      "@app-commons": ["projects/app-commons/index"],
+      "@app-ui": ["projects/app-ui/src/public-api"]
+    }
   },
-  "files": ["src/main.ts", "src/polyfills.ts"],
-  "include": ["src/**/*.ts"],
-  "exclude": ["src/test.ts", "src/**/*.spec.ts"]
+  "files": ["src/main.ts"],
+  "include": ["src/**/*.d.ts"],
+  "exclude": ["src/environments/environment.*.ts", "**/*.spec.ts"]
 }

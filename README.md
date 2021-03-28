@@ -2,13 +2,13 @@
 
 > Web application.
 
-+ [node](http://nodejs.org) 12.13.0
-+ [npm](http://npmjs.com) 6.13.0
-+ [ng](http://angular.io) 9.1.9
++ [node](http://nodejs.org) 14.16.0
++ [npm](http://npmjs.com) 6.14.11
++ [ng](http://angular.io) 11.2.3
 
 ### 1. Packages
 
-> Packages: `app`, `app-commons`, `app-e2e` and `app-ui`.
+> Packages: `app`, `app-commons` and `app-ui`.
 
 #### 1.1. `app`  
 The default project, the application source code is here.
@@ -16,10 +16,7 @@ The default project, the application source code is here.
 #### 1.2. `app-commons`  
 The common package contains common parts. E.g: sass variables, sass mixins...
 
-#### 1.3. `app-e2e`  
-The e2e project includes the scenarios to make sure the `app` application runs correctly.
-
-#### 1.4. `app-ui`
+#### 1.3. `app-ui`
 This is the project includes the UI components used in the `app` application.
 
 ### 2. Responsive break points
@@ -36,13 +33,12 @@ This is the project includes the UI components used in the `app` application.
 + Production deploy: *npm run prod*
 + Start dev server: *npm start*
 + Run lint: *ng lint*
-+ Run e2e: *ng e2e*
 + Test: *npm test*
 + Statistic: *npm run stats*
 
 #### 4.2. Conventions
 
-> Besides the other common conventions, the below rule should be followed.
+> Beside the other common conventions, the below rule should be followed.
 
 + Naming:
     - protected and private fields inside the classes must be lead by the `_`, except the readonly fields.

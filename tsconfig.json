@@ -3,29 +3,24 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
-    "module": "esnext",
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2018", "dom"],
-    "paths": {
-      "@environments/*": ["projects/app/src/environments/*"],
-      "@core/*": ["projects/app/src/app/core/*"],
-      "@modules/*": ["projects/app/src/app/modules/*"],
-      "@shared/*": ["projects/app/src/app/shared/*"],
-      "@pages/*": ["projects/app/src/app/pages/*"],
-      "@security": ["projects/app/src/app/security/index"],
-      "@app-commons": ["projects/app-commons/index"],
-      "@app-ui": ["projects/app-ui/src/public-api"]
-    }
+    "module": "es2020",
+    "lib": ["es2018", "dom"]
   },
   "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
   }
 }

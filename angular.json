@@ -9,6 +9,9 @@
         "@schematics/angular:component": {
           "style": "sass",
           "changeDetection": "OnPush"
+        },
+        "@schematics/angular:module": {
+          "skipTests": true
         }
       },
       "root": "projects/app",
@@ -21,9 +24,8 @@
             "outputPath": "dist/app",
             "index": "projects/app/src/index.html",
             "main": "projects/app/src/main.ts",
-            "polyfills": "projects/app/src/polyfills.ts",
             "tsConfig": "projects/app/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               {
                 "glob": "**/*",
@@ -34,8 +36,9 @@
             ],
             "styles": ["projects/app/src/styles.sass"],
             "stylePreprocessorOptions": {
-              "includePaths": ["projects/calypso-commons/sass"]
-            }
+              "includePaths": ["projects/app-commons/sass"]
+            },
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -48,9 +51,7 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -85,57 +86,6 @@
           "options": {
             "browserTarget": "app:build"
           }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/app/src/test.ts",
-            "polyfills": "projects/app/src/polyfills.ts",
-            "tsConfig": "projects/app/tsconfig.spec.json",
-            "karmaConfig": "projects/app/karma.conf.js",
-            "assets": ["projects/app/src/favicon.ico", "projects/app/src/assets"],
-            "styles": ["projects/app/src/styles.sass"],
-            "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/app/tsconfig.app.json",
-              "projects/app/tsconfig.spec.json",
-              "projects/app-e2e/tsconfig.json",
-              "projects/app-ui/tsconfig.lib.json",
-              "projects/app-ui/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        }
-      }
-    },
-    "app-e2e": {
-      "root": "projects/app-e2e/",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/app-e2e/protractor.conf.js",
-            "devServerTarget": "app:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "app:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "projects/app-e2e/tsconfig.json",
-            "exclude": ["**/node_modules/**", "*.json", "**/*.json"]
-          }
         }
       }
     },
@@ -145,6 +95,9 @@
         "@schematics/angular:component": {
           "style": "sass",
           "changeDetection": "OnPush"
+        },
+        "@schematics/angular:module": {
+          "skipTests": true
         }
       },
       "root": "projects/app-ui",
@@ -152,18 +105,18 @@
       "prefix": "jo",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/app-ui/tsconfig.lib.json",
-            "project": "projects/app-ui/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/app-ui/src/test.ts",
-            "tsConfig": "projects/app-ui/tsconfig.spec.json",
-            "karmaConfig": "projects/app-ui/karma.conf.js"
+            "project": "projects/app-ui/ng-package.json",
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/app-commons/sass"]
+            }
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/app-ui/tsconfig.lib.prod.json"
+            }
           }
         },
         "lint": {

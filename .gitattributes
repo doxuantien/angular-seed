@@ -4,3 +4,5 @@
 *.md    eol=lf
 *.json  eol=lf
 *.yml   eol=lf
+*.ts   eol=lf
+*.svg  eol=lf
